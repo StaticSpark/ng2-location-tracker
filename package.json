@@ -1,9 +1,9 @@
 {
-  "name": "angular2-webpack-starter",
+  "name": "location-tracker",
   "version": "3.0.0",
-  "description": "An Angular 2 Webpack Starter kit featuring Angular 2 (Router, Http, Forms, Services, Tests, E2E, Coverage), Karma, Protractor, Jasmine, Istanbul, TypeScript, and Webpack by AngularClass",
-  "author": "Patrick Stapleton <patrick@angularclass.com>",
-  "homepage": "https://github.com/angularclass/angular2-webpack-starter",
+  "description": "Location tracker using angular2 and node",
+  "author": "Jahidul Islam <jsec516@gmail.com>",
+  "homepage": "https://github.com/jsec516/location-tracker",
   "license": "MIT",
   "scripts": {
     "clean": "npm cache clean && rimraf node_modules doc typings coverage dist",
@@ -46,6 +46,8 @@
     "es6-promise": "^3.1.2",
     "es6-shim": "^0.33.3",
     "es7-reflect-metadata": "^1.6.0",
+    "gsap": "^1.18.2",
+    "jquery": "^2.2.1",
     "rxjs": "5.0.0-beta.2",
     "zone.js": "0.5.15"
   },
@@ -96,10 +98,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/angularclass/angular2-webpack-starter.git"
+    "url": "https://github.com/jsec516/location-tracker.git"
   },
   "bugs": {
-    "url": "https://github.com/angularclass/angular2-webpack-starter/issues"
+    "url": "https://github.com/jsec516/location-tracker/issues"
   },
   "engines": {
     "node": ">= 4.2.1",

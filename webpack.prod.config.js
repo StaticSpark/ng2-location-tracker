@@ -21,7 +21,7 @@ var HOST = process.env.HOST || 'localhost';
 var PORT = process.env.PORT || 8080;
 
 var metadata = {
-  title: 'Angular2 Webpack Starter by @gdi2990 from @AngularClass',
+  title: 'Location Tracker',
   baseUrl: '/',
   host: HOST,
   port: PORT,
@@ -146,7 +146,10 @@ module.exports = helpers.defaults({
       '__decorate': 'ts-helper/decorate',
       '__awaiter': 'ts-helper/awaiter',
       '__extends': 'ts-helper/extends',
-      '__param': 'ts-helper/param'
+      '__param': 'ts-helper/param',
+      $: "jquery",
+      jQuery: "jquery",
+      gsap: 'gsap'
     }),
     new UglifyJsPlugin({
       // to debug prod builds uncomment //debug lines and comment //prod lines
