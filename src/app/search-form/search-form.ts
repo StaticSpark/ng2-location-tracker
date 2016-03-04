@@ -8,24 +8,28 @@ import {LocationService} from '../services/location.service';
     <div class="row">
         <div class="col-lg-12">
             <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search for...">
+            <input type="text" class="form-control" [(ngModel)]="searchTerm" placeholder="Search for...">
             <span class="input-group-btn">
                 <button class="btn btn-default" type="button" (click)="search()" >Go!</button>
             </span>
             </div><!-- /input-group -->
         </div><!-- /.col-lg-6 -->
+        <div class="col-lg-12">
+        <label>term is {{searchTerm}}</label>
+        </div>
     </div><!-- /.row -->
   `
 })
 export class SearchForm {
+
+    public searchTerm: string;
 
     constructor(private locationService: LocationService) {
 
     }
 
     search() {
-        console.info("searching...");
-        this.locationService.search();
+        this.locationService.search(this.searchTerm);
     }
 
     ngOnInit() {

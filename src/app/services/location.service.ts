@@ -12,9 +12,8 @@ export class LocationService {
     constructor(private http: Http) {
     }
 
-    search() {
-
-        let body = JSON.stringify({ "term": 'mirpur' });
+    search(searchTerm) {
+        let body = JSON.stringify({ "term": searchTerm });
         let options = { "headers": new Headers({ "Content-Type": "application/json" }) };
         this.http.post(Config.reqDomain + "/search", body, options)
             .map((res) => res.json())
@@ -23,4 +22,6 @@ export class LocationService {
             err => { throw err; },
             () => console.log('Search Complete'));
     }
+
+    
 }
