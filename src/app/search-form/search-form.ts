@@ -3,8 +3,8 @@ import {FORM_DIRECTIVES} from 'angular2/common';
 import {LocationService} from '../services/location.service';
 
 @Component({
-  selector: 'search-form',
-  template: `
+    selector: 'search-form',
+    template: `
     <div class="row">
         <div class="col-lg-12">
             <div class="input-group">
@@ -18,16 +18,17 @@ import {LocationService} from '../services/location.service';
   `
 })
 export class SearchForm {
-  
-  constructor(private locationService: LocationService) {
 
-  }
+    constructor(private locationService: LocationService) {
 
-  search(){
-      console.info("searching...");
-      this.locationService.search();
-  }
-  ngOnInit() {
-  }
+    }
+
+    search() {
+        console.info("searching...");
+        this.locationService.search();
+    }
+
+    ngOnInit() {
+    }
 
 }
