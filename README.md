@@ -15,8 +15,11 @@ cd location-tracker
 # install the repo with npm
 npm install
 
-# start the server
+# start the client
 npm start
+
+# start the server
+node server.js
 ```
 go to [http://0.0.0.0:3000](http://0.0.0.0:3000) or [http://localhost:3000](http://localhost:3000) in your browser
 
