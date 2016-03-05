@@ -7,9 +7,18 @@ import {Config} from './config';
 export class LocationService { 
     
     // local states
-    locations: Subject<any> = new BehaviorSubject<any>([]);
+    locations: Subject<any>;
 
     constructor(private http: Http) {
+        
+        this.locations = new BehaviorSubject<any>([
+            {lat: 23.826, lng: 90.391, zone: 'manikdi', images:'assets/img/rooms/1.jpg', title: 'Lorem Ipsum is simply ...', price: 200},
+            {lat: 23.83381, lng: 90.36945, zone: 'mirpur-11', images:'assets/img/rooms/2.jpg', title: 'Lorem Ipsum is simply ...', price: 50},
+            {lat: 23.816, lng: 90.391, zone: 'manikdi', images:'assets/img/rooms/1.jpg', title: 'Lorem Ipsum is simply ...', price: 200},
+            {lat: 23.845, lng: 90.36945, zone: 'mirpur-11', images:'assets/img/rooms/2.jpg', title: 'Lorem Ipsum is simply ...', price: 50},
+            {lat: 23.856, lng: 90.391, zone: 'manikdi', images:'assets/img/rooms/1.jpg', title: 'Lorem Ipsum is simply ...', price: 200},
+            {lat: 23.865, lng: 90.36945, zone: 'mirpur-11', images:'assets/img/rooms/2.jpg', title: 'Lorem Ipsum is simply ...', price: 50}
+        ]);
     }
 
     searchLocation(searchTerm) {

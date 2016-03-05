@@ -1,4 +1,5 @@
 require('./assets/lib/bootstrap/css/bootstrap.min.css').toString();
+require('./assets/css/app.css').toString();
 // Polyfills
 // import 'ie-shim';
 import 'es6-shim';

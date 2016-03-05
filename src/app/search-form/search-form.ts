@@ -9,12 +9,19 @@ import {LocationService} from '../services/location.service';
         .search-form-container{
             position:relative;
         }
-        .suggestion{
+
+        .sugg-container{
             position: absolute;
             top: 35px;
             z-index: 2;
-            background: #fff;
-            width: 80%;
+            padding-right: 30px;
+            width: 100%;
+        }
+        .suggestion{
+            background-color: rgba(0, 0, 0, .7);
+            width: 100%;
+            color: #fff;
+            font-weight: bold;
         }
         
         .suggestion li{
@@ -32,20 +39,21 @@ import {LocationService} from '../services/location.service';
         <div class="col-lg-12 search-form-container">
             <form [ngFormModel]="myForm">
                 <div class="input-group">
-                    <input type="text" class="form-control" [ngFormControl]="myForm.controls['term']" [(ngModel)]="searchTerm" placeholder="Search for...">
+                    <input type="text" class="form-control" [ngFormControl]="myForm.controls['term']" [(ngModel)]="searchTerm" placeholder="type: manikdi, mirpur etc.">
                     <span class="input-group-btn">
-                        <button class="btn btn-default" type="button" (click)="search()" >Go!</button>
+                        <button class="btn btn-primary" type="button" (click)="search()" >Go!</button>
                     </span>
                 </div><!-- /input-group -->
-                <ul *ngIf="zones" class="list-unstyled suggestion">
-                    <li *ngFor="#zone of zones" (click)="select(zone)" >{{zone}}</li>
-                </ul>
+                <div class="sugg-container">
+                    <ul *ngIf="zones" class="list-unstyled suggestion">
+                        <li *ngFor="#zone of zones" (click)="select(zone)" >{{zone}}</li>
+                    </ul>
+                </div>
             </form>
         </div><!-- /.col-lg-6 -->
-        <div class="col-lg-12">
+        <!--<div class="col-lg-12">
         <label>term is {{searchTerm}}</label>
-        
-        </div>
+        </div>-->
     </div><!-- /.row -->
   `
 })
@@ -60,6 +68,7 @@ export class SearchForm {
             'term': ['', Validators.required]
         });
         this.term = this.myForm.controls['term'];
+        
         this.userSelected = false;
     }
 

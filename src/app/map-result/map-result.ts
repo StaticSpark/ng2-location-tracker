@@ -32,7 +32,7 @@ export class MapResult {
     ngOnInit() {
         this.map = new google.maps.Map(document.getElementById('mapResult'), {
             zoom: 12,
-            center: { lat: 52.520, lng: 13.410 }
+            center: { lat: 23.82824, lng: 90.38896 }
         });
         
         this.locationService.locations.subscribe((results: any) => {

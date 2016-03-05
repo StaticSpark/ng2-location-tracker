@@ -19,7 +19,10 @@ import {LocationService} from './services/location.service';
   `],
   template: `
     <div class="container">
-        <h1 class="text-center">location tracker</h1>
+        <div class="row">
+            <img alt="Brand" [src]="'assets/img/logo.png'">
+        </div>
+        <h1 class="text-center">Search Room In Location</h1>
         <router-outlet></router-outlet>
     </div>
   `
