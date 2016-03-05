@@ -34,7 +34,7 @@ export class MapResult {
             zoom: 12,
             center: { lat: 23.82824, lng: 90.38896 }
         });
-        
+
         this.locationService.locations.subscribe((results: any) => {
             this.neighborhoods = results;
             this.search();

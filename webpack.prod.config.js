@@ -98,11 +98,13 @@ module.exports = helpers.defaults({
       },
 
       // Support for CSS as raw text
-      {
-        test: /\.css$/,
-        loader: 'raw-loader'
-      },
-
+      // Support for CSS as raw text
+      { test: /\.css$/,   loader: 'style-loader!css-loader' },
+        // support for bootstrap font
+    {
+        test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+        loader: 'url-loader'
+    },
       // support for .html as raw text
       {
         test: /\.html$/,

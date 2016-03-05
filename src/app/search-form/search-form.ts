@@ -58,17 +58,18 @@ import {LocationService} from '../services/location.service';
   `
 })
 export class SearchForm {
-    public searchTerm: string;
-    private userSelected: boolean;
+    searchTerm: string;
     myForm: ControlGroup;
     term: AbstractControl;
     zones: any;
+    private userSelected: boolean;
+
     constructor(fb: FormBuilder, private locationService: LocationService) {
         this.myForm = fb.group({
             'term': ['', Validators.required]
         });
         this.term = this.myForm.controls['term'];
-        
+
         this.userSelected = false;
     }
 
@@ -76,7 +77,7 @@ export class SearchForm {
         this.locationService.searchLocation(this.searchTerm);
     }
 
-    select(zone){
+    select(zone) {
         this.searchTerm = zone;
         this.userSelected = true;
         this.zones = [];
@@ -84,22 +85,16 @@ export class SearchForm {
 
     ngOnInit() {
         this.term.valueChanges
-         .debounceTime(400)
-         .filter((term) => {
-             let userAction = this.userSelected;
-             if (this.userSelected) {
-                 this.userSelected = false;
-             } 
-             return Boolean(term) && !userAction; 
-         })
-         .distinctUntilChanged()
-         .switchMap(term => this.locationService.searchZone(term))
-         .subscribe(items => {console.log('items are ', items); this.zones = items['data'];});
-//         this.term.valueChanges.debounceTime(400).distinctUntilChanged().subscribe(
-// (value: string) => {
-// console.log('sku changed to:', value);
-// }
-// );
+            .debounceTime(400)
+            .filter((term) => {
+                let userAction = this.userSelected;
+                if (this.userSelected) {
+                    this.userSelected = false;
+                }
+                return Boolean(term) && !userAction;
+            })
+            .distinctUntilChanged()
+            .switchMap(term => this.locationService.searchZone(term))
+            .subscribe(items => { console.log('items are ', items); this.zones = items['data']; });
     }
-
 }

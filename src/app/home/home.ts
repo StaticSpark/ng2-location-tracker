@@ -13,7 +13,7 @@ import {MapResult} from '../map-result/map-result';
 })
 export class Home {
   data = { value: '' };
-  
+
   constructor() {
 
   }
