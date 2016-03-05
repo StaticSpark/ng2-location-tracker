@@ -12,7 +12,7 @@ export class LocationService {
     constructor(private http: Http) {
     }
 
-    search(searchTerm) {
+    searchLocation(searchTerm) {
         let body = JSON.stringify({ "term": searchTerm });
         let options = { "headers": new Headers({ "Content-Type": "application/json" }) };
         this.http.post(Config.reqDomain + "/search", body, options)
@@ -23,5 +23,11 @@ export class LocationService {
             () => console.log('Search Complete'));
     }
 
-    
+    searchZone(input) {
+        console.log('zone query is ', input);
+        return this.http
+                .get(Config.reqDomain + "/search/"+input)
+                .map((request) => request.json());
+        // return input;
+    }
 }
